@@ -11,9 +11,10 @@ public class Solution {
         String militaryCommissar = ", явитесь в военкомат";
         Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();
-        int age = scanner.nextInt();
-        if (age >= 18 && age <= 28) {
-            System.out.println(name + militaryCommissar);
+        int ege = scanner.nextInt();
+        if(ege<=28 && ege >= 18) {
+            System.out.println(name +  ", явитесь в военкомат");
+
         }
 
     }
