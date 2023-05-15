@@ -22,6 +22,12 @@ public class Solution {
             }
         }
 
+        for (int i = 0; i < field.length; i++) {
+            int j = (int) (Math.random() * width);
+            field[i][j] = robotank;
+        }
+
+
 
         for (int i = 0; i < field.length; i++) {
             for (int j = 0; j < field[i].length; j++) {
