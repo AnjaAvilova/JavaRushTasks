@@ -23,12 +23,7 @@ public class Solution {
         diabloPosition = getRandomNumber(4);
         findDiablo();
         battle();
-        boolean flag = isAmigoWin();
-        if(flag) {
-            System.out.println(winPhrase);
-        } else {
-            System.out.println(loosePhrase);
-        }
+//        isAmigoWin();
     }
 
     public static int getRandomNumber(int range) {
@@ -47,40 +42,45 @@ public class Solution {
                 System.out.println(getPositionPhrase);
             }
         }
-
     }
 
     public static void amigoLostLife() {
         amigoLives = amigoLives - 1;
     }
-    public static void diabloLostLife(){
+
+    public static void diabloLostLife() {
         diabloLives = diabloLives - 3;
     }
+
     public static int amigoAttacks() {
-       return getRandomNumber(3);
+        return getRandomNumber(3);
 
     }
 
-    public static int diabloDefends(){
+    public static int diabloDefends() {
         return getRandomNumber(3);
     }
-    public static void battle(){
-       while(amigoLives > 0 && diabloLives > 0) {
-           if(amigoAttacks()==diabloDefends()) {
-               amigoLostLife();
-               System.out.println(diabloDefendPhrase);
-           }else {
-               diabloLostLife();
-               System.out.println(amigoAttackPhrase);
-           }
-       }
-    }
-    public static boolean isAmigoWin(){
-       if(diabloLives <=0) {
-           return true;
-       } else {
-           return false;
-       }
+
+    public static void battle() {
+        while (amigoLives > 0 && diabloLives > 0) {
+            if (amigoAttacks() == diabloDefends()) {
+                amigoLostLife();
+                System.out.println(diabloDefendPhrase);
+            } else {
+                diabloLostLife();
+                System.out.println(amigoAttackPhrase);
+            }
+        }
     }
 
+//    public static boolean isAmigoWin() {
+//        if (true) {
+//            System.out.println(winPhrase);
+//        } else {
+//            System.out.println(loosePhrase);
+//        }
+//
+//    }
 }
+
+
