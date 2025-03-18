@@ -12,19 +12,21 @@ DownloadException
 public class Solution {
     public static void main(String[] args) throws DownloadException, IOException {
         BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
-        while (true) {
-            String fileName = console.readLine();
-            try(FileInputStream file = new FileInputStream(fileName)) {
-                int size = file.available();
-                if (size < 1000) {
+        while (true){
+            try(FileInputStream inputStream = new FileInputStream(console.readLine())) {
+                if (inputStream.available() < 1000) {
                     throw new DownloadException();
                 }
             }
         }
+
+
+
+
+
     }
 
     public static class DownloadException extends Exception {
-
 
     }
 }
