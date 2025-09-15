@@ -24,7 +24,7 @@ public class Solution {
             return "0";
         }
         BigDecimal bigDecimal = BigDecimal.ONE;
-        for (int i = 1; i >= n; i++) {
+        for (int i = 1; i <= n; i++) {
             bigDecimal =bigDecimal.multiply(BigDecimal.valueOf(i));
         }
         return bigDecimal.toString();
