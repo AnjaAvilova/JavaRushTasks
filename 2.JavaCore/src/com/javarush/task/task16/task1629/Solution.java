@@ -14,35 +14,37 @@ public class Solution {
     public static void main(String[] args) throws InterruptedException {
         Read3Strings t1 = new Read3Strings();
         Read3Strings t2 = new Read3Strings();
+
         t1.start();
-        t1.join();
         t2.start();
+
+        t1.join();
         t2.join();
-
-
-        //add your code here - добавьте код тут
 
         t1.printResult();
         t2.printResult();
-
     }
 
     public static class Read3Strings extends Thread {
-        StringBuilder builder = new StringBuilder();
+        String string;
 
-        @Override
         public void run() {
             try {
-                for (int i = 0; i < 3; i++) {
-                    String line = reader.readLine();
-                    builder.append(line).append(" ");
-                }
+                String string1 = reader.readLine();
+                string = string1 + " ";
+                String string2 = reader.readLine();
+                string = string + string2 +" ";
+                String string3 = reader.readLine();
+                string = string + string3;
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }
-        public void printResult(){
-            System.out.println(builder);
+
+        public void printResult() {
+            System.out.println(string);
         }
+
+
     }
 }
